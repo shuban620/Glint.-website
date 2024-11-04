@@ -1,5 +1,34 @@
 @import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 
+.offcanvas-header {
+    display: flex;
+    align-items: center;
+    padding: 19px 35px 30px 35px;
+}
+
+.offcanvas.offcanvas-end {
+    top: 0;
+    right: 0;
+    /* width: var(--bs-offcanvas-width); */
+    border-left: var(--bs-offcanvas-border-width) solid var(--bs-offcanvas-border-color);
+    /* transform: translateX(100%); */
+    width: 23%;
+    padding: 30px 0;
+}
+
+
+
+.grid-item {
+    width: 48%; /* Adjust this percentage for spacing */
+}
+
+
+/* <-------css variables--------> */
+:root {
+    --primary-margin: 0 3.8rem;
+}
+
+/* <-------font-face--------> */
 @font-face {
     font-family: 'myfont';
     src: url(../styles/Montserrat-Bold.ttf);
@@ -16,13 +45,22 @@ body {
 
 .title-color {
     color: #38b549;
+    /* color: var(--primary-color); */
+    font-family: "montserrat-semibold", sans-serif;
+    font-size: 11px;
+    line-height: 1.5;
+    text-transform: uppercase;
+    letter-spacing: .2rem;
+    font-weight: 600;
 }
 
 .btn-close {
-    filter: invert(3);
-    /* This turns the default close icon to white */
+    filter: brightness(0) invert(1);
+    font-size: 0.7rem;
+    font-weight: bold !important;
+    --bs-btn-close-opacity: 1;
+    --bs-btn-close-hover-opacity: 1;
 }
-
 
 img {
     max-width: 100%;
@@ -39,9 +77,22 @@ img {
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
+    background-attachment: fixed;
     width: 100%;
     height: fit-content;
+
+    img {
+        width: 80px;
+        height: 25px;
+    }
+
+    .spacing-top {
+        padding-top: 1.1rem;
+        padding-left: 0;
+        margin-left: -22px;
+    }
 }
+
 
 .btn-align {
     position: fixed;
@@ -58,16 +109,36 @@ img {
         color: #38b549;
         transition: .5s;
     }
+
+    h5 {
+        line-height: 1;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        margin: 0;
+    }
 }
 
 .btn-setup {
     display: flex;
-    justify-content: left;
+    justify-content: center;
     flex-wrap: wrap;
     padding: 10px 20px;
-    font-size: 5px;
     font-family: 'Montserrat';
     gap: 20px;
+    margin-right: 11rem;
+    margin-left: -2rem;
+
+    a {
+        font-size: 12px;
+        display: flex;
+        align-items: center;
+        font-weight: 700;
+        letter-spacing: 0.1rem;
+        padding: 15px 30px;
+        border: 2px solid;
+        font-family: "montserrat-medium", sans-serif;
+    }
 }
 
 .offcanvas-backdrop {
@@ -75,7 +146,7 @@ img {
 }
 
 .sidebar-nav {
-    background-color: #333;
+    background-color: #0d0d0d;
     color: white;
     z-index: 999;
     position: fixed;
@@ -86,11 +157,14 @@ img {
     a {
         color: white;
         text-align: left;
-        font-size: 20px;
+        font-size: 18px;
+        font-weight: 600;
     }
 
     p {
-        color: gray;
+        color: #384047;
+        padding: 35px 20px 0px 15px;
+        font-size: 13px;
     }
 
     .contact-social {
@@ -100,6 +174,7 @@ img {
         margin-top: 10px;
         margin-bottom: 10px;
         gap: 20px;
+        padding-left: 12px;
 
         li {
             list-style-type: none;
@@ -107,7 +182,7 @@ img {
 
         .social-icon {
             font-size: 20px;
-            color: gray;
+            color: #384047;
             transition: .5s ease;
             list-style: none;
         }
@@ -127,7 +202,7 @@ img {
     z-index: 1;
     margin: 0;
     position: absolute;
-    top: 50%;
+    top: 72%;
     right: 5.4rem;
     -webkit-transform: translate3d(0, -50%, 0);
     -ms-transform: translate3d(0, -50%, 0);
@@ -203,14 +278,25 @@ img {
     flex-wrap: wrap;
 
     h1 {
-        font-size: 50px;
-        font-weight: bold;
+        font-weight: 600;
         color: white;
         font-family: 'Montserrat', sans-serif;
-        line-height: 1.2;
+        font-style: normal;
+        text-rendering: optimizeLegibility;
+        font-size: 3.4rem;
+        line-height: 1.4;
+        margin-top: 0;
+        color: #FFFFFF;
+        margin-bottom: 5.8rem;
 
         span {
-            font-size: 20px;
+            text-transform: uppercase;
+            letter-spacing: 0.1rem;
+            position: relative;
+            margin-top: 0;
+            margin-bottom: 1.2rem;
+            margin-left: 6px;
+            font-size: 1rem;
         }
     }
 }
@@ -223,13 +309,20 @@ img {
 
     h5 {
         font-family: 'myfont';
-        font-size: 20px;
+        font-size: 17px;
+        font-weight: 600;
+        margin: 0;
+        letter-spacing: 0.2rem;
+    }
+
+    h4 {
+        font-family: 'myfont';
+        font-size: 17px;
         font-weight: 600;
         margin: 0;
     }
 
     h1 {
-        font-size: 60px;
         margin: 0;
         font-weight: bold;
         color: white;
@@ -237,11 +330,19 @@ img {
         display: inline-block;
         line-height: 2;
         text-rendering: optimizeLegibility;
+        margin-bottom: 40px;
+        font-size: 4.8rem;
+        line-height: 1.25;
+        margin-top: 0;
+        padding-bottom: 30px;
     }
 
     p {
-        font-size: 25px;
         font-family: 'lora', sans-serif;
+        font-size: 1.5rem;
+        line-height: 1.75;
+        text-align: center;
+        padding: 0 20px;
     }
 }
 
@@ -272,29 +373,53 @@ img {
     text-align: center;
     line-height: 1.5;
 
+    .sub-section {
+        display: flex;
+        justify-content: center;
+    }
+
+    .margin-top {
+        margin-top: 4.5rem;
+    }
+
+    [class*="col-"] {
+        float: left;
+        padding: 0 7rem;
+    }
+
     h5 {
         font-family: 'myfont';
-        font-size: 20px !important;
+        font-size: 17px !important;
         font-weight: 600;
         color: #38b549;
+        letter-spacing: 0.1rem;
     }
 
     h1 {
         font-size: 50px !important;
         font-weight: bold;
-        border-bottom: 1px solid gray;
+        border-bottom: 1px solid lightgray;
         display: block;
         padding-bottom: 20px;
         text-rendering: optimizeLegibility;
+        color: black;
     }
 
     p {
-        font-size: 20px;
+        font-size: 1rem;
         line-height: 1.8;
         color: #75758a;
         font-family: 'lora', sans-serif;
         text-align: left;
         font-weight: lighter;
+    }
+
+    .icon-box {
+        color: #38b549;
+        padding: 10px 20px;
+        border: none;
+        padding-bottom: 0;
+        font-size: 40px;
     }
 
     .title {
@@ -304,12 +429,6 @@ img {
         padding: 10px 20px;
         font-family: 'Montserrat';
         gap: 20px;
-
-        h1 {
-            color: #38b549;
-            border: none;
-            padding-bottom: 0;
-        }
 
         h2 {
             font-weight: 600;
@@ -340,13 +459,9 @@ img {
         text-rendering: optimizeLegibility;
     }
 
-    .img-alignment {
-        height: -webkit-fill-available;
-    }
-
     .img-fluid {
         max-width: 100%;
-        z-index: 1;
+        height: -webkit-fill-available;
     }
 
     .image-overlay {
@@ -596,6 +711,10 @@ img {
     background-size: cover;
     background-position: center center;
 
+    .spacing {
+        margin: var(--primary-margin);
+    }
+
     h5 {
         color: #38b549;
         font-size: 20px;
@@ -625,10 +744,13 @@ img {
         h3 {
             opacity: 1;
             color: white;
-            text-transform: uppercase;
             font-weight: 700;
+            font-size: 1rem;
+            line-height: 1.385rem;
+            text-transform: uppercase;
+            letter-spacing: .16rem;
+            font-family: "montserrat-medium", sans-serif;
         }
-
 
         .contact-content input[type="email"],
         .contact-content input[type="number"],
@@ -654,19 +776,46 @@ img {
         textarea,
         select {
             display: block;
-            height: 6rem;
-            padding: 1.5rem 0;
+            height: auto;
+            padding: 0.8rem 0;
             border: 0;
             outline: none;
             color: white;
             font-family: "montserrat-light", sans-serif;
-            font-size: 1.4rem;
-            line-height: 3rem;
+            font-size: 1rem;
+            line-height: 1.1rem;
             max-width: 100%;
             background: transparent;
             border-bottom: 2px solid rgba(0, 0, 0, 0.15);
             -webkit-transition: all 0.3s ease-in-out;
             transition: all 0.3s ease-in-out;
+            margin: 0 0 1.5rem;
+        }
+
+        input[type="email"]:hover,
+        input[type="number"]:hover,
+        input[type="search"]:hover,
+        input[type="text"]:hover,
+        input[type="tel"]:hover,
+        input[type="url"]:hover,
+        input[type="password"]:hover,
+        textarea:hover,
+        select:hover {
+            display: block;
+            height: auto;
+            padding: 0.8rem 0;
+            border: 0;
+            outline: none;
+            color: white;
+            font-family: "montserrat-light", sans-serif;
+            font-size: 1rem;
+            line-height: 1.1rem;
+            max-width: 100%;
+            background: transparent;
+            border-bottom: 2px solid #38b549;
+            -webkit-transition: all 0.3s ease-in-out;
+            transition: all 0.3s ease-in-out;
+            margin: 0 0 1.5rem;
         }
 
         input[type="email"],
@@ -688,8 +837,6 @@ img {
             width: 100%;
         }
 
-        input,
-        textarea,
         select,
         pre,
         blockquote,
@@ -773,13 +920,17 @@ img {
     .contact-secondary {
         background-color: #151515;
         color: #75758a;
-        padding: 50px 60px 190px 50px;
+        padding: 50px;
 
         h3 {
             opacity: 1;
             color: white;
-            text-transform: uppercase;
             font-weight: 700;
+            font-size: 1rem;
+            line-height: 1.385rem;
+            text-transform: uppercase;
+            letter-spacing: .16rem;
+            font-family: "montserrat-medium", sans-serif;
         }
 
         .contact-info {
@@ -807,10 +958,12 @@ footer {
     h2 {
         color: #38b549;
         font-weight: bold;
+        margin-bottom: 0;
     }
 
     h3 {
         color: white;
+        margin-bottom: 0;
     }
 
     p {
@@ -852,8 +1005,18 @@ footer {
 }
 
 @media only screen and (max-width: 768px) {
+    .offcanvas.offcanvas-end {
+        top: 0;
+        right: 0;
+        /* width: var(--bs-offcanvas-width); */
+        border-left: var(--bs-offcanvas-border-width) solid var(--bs-offcanvas-border-color);
+        /* transform: translateX(100%); */
+        width: 70%;
+        padding: 30px 0;
+    }
+
     .home-content {
-        padding: 0px;
+        padding: 0;
         text-align: center;
         display: flex;
         justify-content: center;
@@ -862,11 +1025,16 @@ footer {
         flex-wrap: wrap;
 
         h1 {
-            font-size: 30px;
-            font-weight: bold;
+            font-weight: 600;
             color: white;
             font-family: 'Montserrat', sans-serif;
-            line-height: 1.2;
+            font-style: normal;
+            text-rendering: optimizeLegibility;
+            font-size: 2rem;
+            line-height: 1.6;
+            margin-top: 0;
+            color: #FFFFFF;
+            margin-bottom: 1.8rem;
 
             span {
                 font-size: 20px;
@@ -879,13 +1047,22 @@ footer {
         justify-content: center;
         flex-wrap: wrap;
         padding: 10px 20px;
-        font-size: 5px;
         font-family: 'Montserrat';
         gap: 20px;
+        margin-right: 0;
+        margin-left: 0;
     }
 
     .home-social {
         display: none;
+    }
+
+    .main-img {
+        .spacing-top {
+            padding-top: 1.1rem;
+            padding-left: 0;
+            margin-left: 0;
+        }
     }
 
     .btn-align {
@@ -913,24 +1090,41 @@ footer {
 
         h5 {
             font-family: 'myfont';
-            font-size: 15px;
+            font-size: 13px;
             font-weight: 600;
+            margin: 0;
+            letter-spacing: 0.2rem;
+        }
+
+
+        h4 {
+            font-family: 'myfont';
+            font-size: 13px;
+            font-weight: 600;
+            margin: 0;
         }
 
         h1 {
-            font-size: 20px;
+            margin: 0;
             font-weight: bold;
-            color: white;
+            color: white !important;
             border-bottom: 1px solid wheat;
             display: inline-block;
-            padding-bottom: 20px;
-            line-height: 1;
+            line-height: 1.5;
             text-rendering: optimizeLegibility;
+            margin-bottom: 20px;
+            font-size: 4.8rem;
+            line-height: 1.25;
+            margin-top: 0;
+            padding-bottom: 10px;
         }
 
         p {
-            font-size: 15px;
             font-family: 'lora', sans-serif;
+            font-size: 1.3rem;
+            line-height: 1.70;
+            text-align: center;
+            padding: 0 10px;
         }
     }
 
@@ -948,11 +1142,23 @@ footer {
         text-align: center;
         line-height: 1.5;
 
+        .sub-section {
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+        }
+
+        [class*="col-"] {
+            float: left;
+            padding: 0 20px;
+        }
+
         h5 {
             font-family: 'myfont';
-            font-size: 15px;
+            font-size: 12px !important;
             font-weight: 600;
             color: #38b549;
+            letter-spacing: 0.1rem;
         }
 
         h1 {
@@ -965,12 +1171,19 @@ footer {
         }
 
         p {
-            font-size: 15px;
+            font-size: 1rem;
             line-height: 1.8;
             color: #75758a;
             font-family: 'lora', sans-serif;
             font-weight: lighter;
             text-align: center;
+        }
+
+        .icon-box {
+            color: #38b549;
+            border: none;
+            padding-bottom: 0;
+            font-size: 40px;
         }
 
         .title {
@@ -980,13 +1193,6 @@ footer {
             font-family: 'Montserrat';
             gap: 20px;
             justify-content: center !important;
-
-            h1 {
-                color: #38b549;
-                border: none;
-                padding-bottom: 0;
-                font-size: 40px;
-            }
 
             h2 {
                 font-weight: 600;
@@ -1021,7 +1227,7 @@ footer {
 
         .img-fluid {
             max-width: 100%;
-
+            height: -webkit-fill-available;
         }
 
         .link-btn {
@@ -1094,6 +1300,11 @@ footer {
     }
 
     .contact-section {
+
+        .spacing {
+            margin: 0;
+        }
+
         h5 {
             font-size: 15px;
         }
@@ -1128,7 +1339,7 @@ footer {
     }
 
     .contact-info {
-        gap: 46px;
+        gap: 40px;
         display: flex;
         justify-content: center;
         flex-direction: column;
@@ -1150,13 +1361,6 @@ footer {
         padding: 50px;
         text-align: center;
 
-        h3 {
-            opacity: 1;
-            color: white;
-            text-transform: uppercase;
-            font-weight: 700;
-        }
-
         .contact-info {
             gap: 46px;
             display: flex;
@@ -1170,5 +1374,49 @@ footer {
                 }
             }
         }
+    }
+}
+
+@media (min-width: 1200px) {
+    .btn-styling {
+        padding: 1px 6px;
+
+        .h5,
+        h5 {
+            font-size: 1.75rem;
+            line-height: 42px;
+            font-family: "montserrat-medium", sans-serif;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: .3rem;
+            color: #39b54a;
+            -webkit-transition: all 0.5s ease-in-out;
+            font-weight: 600;
+
+            span {
+                color: white;
+                margin-top: 2px;
+                font-size: 25px;
+            }
+        }
+
+        .h5,
+        h5:hover {
+            font-size: 1.75rem;
+            line-height: 42px;
+            font-family: "montserrat-medium", sans-serif;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: .3rem;
+            color: white;
+            -webkit-transition: all 0.5s ease-in-out;
+            font-weight: 600;
+        }
+    }
+
+    .h3,
+    h3 {
+        font-size: 1rem;
+        font-weight: 600;
     }
 }

@@ -127,3 +127,16 @@ const sectionSwiper = new Swiper('.swiper-section', {
   },
 });
 
+
+// <---------------for masonry rap the images---------------->
+
+  document.addEventListener('DOMContentLoaded', function() {
+    var elem = document.querySelector('.gallery-grid'); // Updated to target the row container
+    var msnry = new Masonry(elem, {
+      itemSelector: '.grid-item', // Targeting individual grid items
+      columnWidth: '.grid-item', // Setting the width based on the item itself
+      percentPosition: true
+    });
+  });
+
+
