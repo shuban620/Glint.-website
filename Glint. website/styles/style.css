@@ -119,6 +119,26 @@ img {
     }
 }
 
+.btn-styling-2{
+    position: fixed;
+    bottom: 20px;
+    right: 30px;
+    z-index: 999;
+    background-color: #0d0d0d;
+    color: white;
+    transition: .5s;
+}
+
+.btn-styling-2:hover{
+    position: fixed;
+    bottom: 20px;
+    right: 30px;
+    z-index: 999;
+    background-color: #0d0d0d;
+    color: #38b549;
+    transition: .5s;
+}
+
 .btn-setup {
     display: flex;
     justify-content: center;
